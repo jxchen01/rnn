@@ -36,6 +36,7 @@ function SequencerCriterion:updateOutput(inputTable, targetTable)
    
    for i,input in ipairs(inputTable) do
       local criterion = self:getStepCriterion(i)
+      cost_image = cost_map_list[i]
       self.output = self.output + criterion:forward(input, targetTable[i])
    end
    
